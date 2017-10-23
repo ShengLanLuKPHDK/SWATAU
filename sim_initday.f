@@ -248,6 +248,22 @@
 	sub_rspc_d =0.
       !!add by zhang
       !!==========================
-	
+!Macropore flow sediment and pesticide
+      mased = 0.
+      macrotilepst = 0.
+      macroq = 0.
+      macrotile = 0.
+      tilepst = 0.
+      tileq = 0.
+ !     tileqslow = 0.
+      macropst = 0.
+      sol_theta = 0.
+      mased = 0.
+      tilesed = 0.
+      tilesedpst = 0.
+      tile_fr = 0.
+      gwseep1 = 0.
+!Macropore flow sediment and pesticide	
+
       return
       end
