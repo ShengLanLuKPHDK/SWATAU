@@ -316,6 +316,17 @@
         if (surfq(j) > 0. .and. peakr > 1.e-6) then
           if (precipday > 0.) then
             call enrsb(0)
+
+!! compute macropore sediment n add to sediment yield17-4-12 S.Lu
+       !! no sediment leach through macropre in urban area
+       !!sediment only leach in the tile drained fields
+            if(ifast == 1 .and. ddrain(j) > 0.) then
+              call macrosed
+            else
+              tilesed(j) = 0.
+            endif 
+ !! compute macropore sediment n add to sediment yield17-4-12 S.Lu            
+            
             if (sedyld(j) > 0.) call pesty(0)
 
 		  if (cswat == 0) then

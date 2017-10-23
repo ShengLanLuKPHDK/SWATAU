@@ -239,5 +239,14 @@
       call curno(cn2(i),i) !! J.Jeong 4/18/2008
 !      call curno_subd(cn2(i),i)  !! changed for URBAN
 
+!! S.Lu   Determin the maximum detachable sediment pool for macropore sediment
+!!    Sediment in tile were mostly generated from top soil, so only calculate top soil
+!!    euqation from Brubaker et. al 1992 model1. S.Lu 17-4-12
+      msmax(i) = (0.362 * sol_clay(1,i) - 0.518)/100
+      !if (msmax(i)<0. .or. msmax(i)>1.) msmax(i)=
+!!    initialize detachable sediment pool ms value
+      if(ms(i)<0.) ms(i) = 0.5 * msmax(i)
+!! S.Lu   Determin the maximum detachable sediment pool for macropore sediment
+
       return
       end
