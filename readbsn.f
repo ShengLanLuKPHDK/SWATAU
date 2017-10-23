@@ -426,12 +426,12 @@
       read (103,1000) titldum
       read (103,*) isubwq
       read (103,1000) titldum
-      read (103,*) wdpq
-      read (103,*) wgpq
-      read (103,*) wdlpq
-      read (103,*) wglpq
-      read (103,*) wdps
-      read (103,*) wgps
+      read (103,*) macro_fr !wdpq
+      read (103,*) dep_wet !wgpq
+      read (103,*) kr !wdlpq
+      read (103,*) filt !wglpq
+      read (103,*) GWL !wdps
+      read (103,*) percot !wgps
       read (103,*) wdlps
       read (103,*) wglps
       read (103,*) bactkdq
@@ -590,6 +590,12 @@
       if (eof < 0) exit   
       read (103,*,iostat=eof) iroutunit
       exit
+!! macropore flag
+      read (103,*,iostat=eof) ifast
+      if (eof < 0) exit
+      read(103,*,iostat=eof) ipestd
+      if(eof < 0) exit
+	exit
 !!    Drainmod input variables - 01/2006
       end do
 

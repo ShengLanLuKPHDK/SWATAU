@@ -24,7 +24,7 @@
 !!    sol_st(:,:) |mm H2O        |amount of water stored in the soil layer on
 !!                               |any given day (less wilting point water)
 !!    sol_z(:,:)  |mm            |depth to bottom of soil layer
-!!    fr          |none          |fraction of field capacity when macropore flow occure
+!!    macro_fr    |none          |fraction of field capacity when macropore flow occure
 !!    dep_wet     |mm            |depth where soil need to saturate before macropore starts
 
 !!    theta       |none          |relative soil moisture
@@ -107,7 +107,7 @@
                 infil = 0.                               
             endif
 !!find soil water threshold for each layer
-            sol_ma = fr*sol_ul(ly,j)
+            sol_ma = macro_fr *sol_ul(ly,j)
    !         sol_ma = fr*sol_fc(ly,j)
 !!when layer is not at field capacity but soil water is higher than threshold 
 !!and there's enough water to fill all the layers where macropore exist to field capacity
