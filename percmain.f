@@ -126,6 +126,17 @@
 	    sepday = sepday - sepcrktot
 	  endif
 
+ !!calculate macropore flow S.Lu 03-Jun-15
+ !!no macropore flow in urban areas
+      if(ifast == 1 .and. iurban(j) == 0) then
+        call fastflow2
+      else
+        macroq(j) = 0.
+        macrotile(j) = 0.
+      endif
+!      print *,ifast,iwtdn !, alfa, fr,dep_wet,macroq(j)
+!!calculate macropore flow S.Lu 03-Jun-15
+
       do j1 = 1, sol_nly(j)
         !! add water moving into soil layer from overlying layer
         sol_st(j1,j) = sol_st(j1,j) + sepday
@@ -241,6 +252,7 @@
             wt_shall = xx * dep_imp(j)
 		    wat = dep_imp(j) - wt_shall
 			if(wat > dep_imp(j)) wat = dep_imp(j)
+            wat_tbl(j) = wat
           end if
         else
           !compute water table depth using Daniel's modifications
@@ -312,6 +324,14 @@
       do j1 = 1, sol_nly(j)
         sol_sw(j) = sol_sw(j) + sol_st(j1,j)
       end do
+
+!S.Lu for pesticide leaching and transport to tile drains
+      if (ifast == 1) then 
+        qtile = qtile + macrotile(j)
+      endif   
+      tileq(j) = qtile   
+      if (ipestd == 1) call tileqsplit
+!S.Lu for pesticide leaching and transport to tile drains
 
       return
       end

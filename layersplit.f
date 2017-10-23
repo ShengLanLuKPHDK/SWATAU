@@ -16,6 +16,9 @@
         !! if values are within 10 mm of one another, reset boundary
         if (xx < 10.) then
           sol_z(j,ihru) = dep_new
+!!S.Lu determin the boundary layer for macropore flow
+          wet_nly(ihru) = j 
+!!S.Lu determin the boundary layer for macropore flow 
           exit
         end if
 
@@ -23,6 +26,9 @@
         if (sol_z(j,ihru) > dep_new) then
           flag = 1
           sol_nly(ihru) = sol_nly(ihru) + 1
+!!S.Lu determin the boundary layer for macropore flow
+          wet_nly(ihru) = j 
+!!S.Lu determin the boundary layer for macropore flow 
           nly = nly + 1
           jj = 0
           jj = j + 1
