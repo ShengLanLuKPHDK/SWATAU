@@ -313,5 +313,10 @@
         sol_sw(j) = sol_sw(j) + sol_st(j1,j)
       end do
 
+!S.Lu for PO4 leaching and transport to tile drains
+      tileq(j) = qtile
+      if (itilep == 1) call tileqsplit
+!S.Lu for PO4 leaching and transport to tile drains
+       
       return
       end

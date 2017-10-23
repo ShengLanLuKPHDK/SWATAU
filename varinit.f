@@ -328,5 +328,17 @@
         hhsedy = 0.
         ubntss = 0.
 
+!! S.Lu for PO4 leaching and transport to tile drains
+        tile_fr = 0.
+        surqsolp = 0.
+        sol_solpcon = 0.
+        tileminp = 0.
+        tilep_ly = 0.
+        tileq = 0.
+        solp_leach = 0.
+        yieldp = 0.
+        fertsolp = 0.
+        fertorgp = 0.
+!S.Lu for PO4 leaching and tiledrain	
        return
        end

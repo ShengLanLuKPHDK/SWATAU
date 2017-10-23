@@ -966,6 +966,12 @@
       ! tillage_factor: = 1.6 in 30 days after tillage practices occur; otherwise 1.0;
 !! By Zhang for C/N cycling
 
-
+!!S.Lu for PO4 leaching and transport to tile drains
+      integer :: itilep
+      real, dimension(:,:),allocatable :: tile_fr,tilep_ly
+      real, dimension(:,:),allocatable :: sol_solpcon,solp_leach
+      real, dimension (:), allocatable :: tileminp, sub_tilesolp
+      real :: k_langmuir, Qmax_beta
+!!S.Lu for PO4 leaching and transport to tile drains
 
       end module parm

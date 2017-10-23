@@ -55,9 +55,17 @@
       
 !! initialize variables    
       mvaro = 33
+!!S.Lu for hru outout tile drain PO4
+ !     mhruo = 78
       mhruo = 79
+!!S.Lu for hru outout tile drain PO4
       mrcho = 62
+!     msubo = 18
+!     changed for jennifer b
+!!S.Lu for hru outout tile drain PO4
+!      msubo = 22
       msubo = 24
+!!S.Lu for hru outout tile drain PO4
       mstdo = 113
       motot = 600             !! (50 years limit)
       
@@ -1881,7 +1889,15 @@
        tillage_factor = 0.
       !! By Zhang for C/N cycling
       !! ============================
-      	  
+!! S.Lu for PO4 leaching and transport to tile drains
+       allocate(tile_fr(mlyr,mhru))
+       allocate(tilep_ly(mlyr,mhru))
+       allocate(sol_solpcon(mlyr,mhru))
+      	 allocate(solp_leach(mlyr,mhru))
+       allocate(tileminp(mhru))  
+       allocate(sub_tilesolp(msub)) 
+ !! S.Lu for PO4 leaching and transport to tile drains      
+          
       call zero0
       call zero1
       call zero2

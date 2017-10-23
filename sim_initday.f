@@ -248,6 +248,9 @@
 	sub_rspc_d =0.
       !!add by zhang
       !!==========================
-	
+!! S.Lu for PO4 leaching and transport to tile drains
+      sub_tilesolp = 0.
+!! S.Lu for PO4 leaching and transport to tile drains
+
       return
       end

@@ -350,6 +350,9 @@
         sub_yorgp(sb) = sub_yorgp(sb) + sedorgp(j) * hru_fr(j)
         sub_sedpa(sb) = sub_sedpa(sb) + sedminpa(j) * hru_fr(j)
         sub_sedps(sb) = sub_sedps(sb) + sedminps(j) * hru_fr(j)
+!S.Lu for PO4 leaching and transport to tile drains
+        sub_tilesolp(sb) = sub_tilesolp(sb) + tileminp(j) * hru_fr(j)
+!S.Lu for PO4 leaching and transport to tile drains
 
       !! subbasin averages: pesticides
         if (irtpest > 0) then
@@ -536,7 +539,13 @@
                                                   !!sedorgp & sedminps
          varoute(6,ihout) = (sub_no3(sb) + sub_latno3(sb) +             
      &      sub_tileno3(sb) + sub_gwno3(sb)) * sub_ha          !!surqno3 & latno3 & no3gw
-         varoute(7,ihout) = (sub_solp(sb) + sub_gwsolp(sb)) * sub_ha   !!surqsolp & minpgw & sedminpa
+
+!!S.Lu for PO4 leaching and transport to tile drains
+!         varoute(7,ihout) = (sub_solp(sb) + sub_gwsolp(sb)) * sub_ha   !!surqsolp & minpgw & sedminpa
+        varoute(7,ihout) = (sub_solp(sb) + sub_gwsolp(sb) + 
+     &      sub_tilesolp(sb)) *  sub_ha   !!surqsolp & minpgw & tile_solp
+!!S.Lu for PO4 leaching and transport to tile drains
+
          varoute(8,ihout) = 0.
          varoute(9,ihout) = 0.
          varoute(10,ihout) = 0.
@@ -658,6 +667,10 @@
          submono(18,sb) = submono(18,sb) + sub_tileq(sb)    !! jane f. 
          submono(19,sb) = submono(19,sb) + sub_tileno3(sb)
          submono(20,sb) = submono(20,sb) + sub_vaptile(sb)  !! jane f.
+!S.Lu for tile drain PO4 outputs
+         submono(19,sb) = submono(19,sb) + sub_tilesolp(sb)
+         submono(20,sb) = submono(20,sb) + sub_gwsolp(sb)
+!S.Lu for tile drain PO4 outputs
 
           if (iprint == 1) call subday
         end if

@@ -345,7 +345,15 @@
         call nlch
 
         !! compute phosphorus movement
-        call solp
+!        call solp
+
+!!S.Lu new PO4 leaching module
+        if(itilep == 1) then
+          call solplch !new PO4 leaching module
+        else
+          call solp     !original solP leaching
+        endif
+!!S.Lu new PO4 leaching module
 
         !! compute bacteria transport
         call bacteria
