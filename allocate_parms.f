@@ -1405,20 +1405,26 @@
       allocate (pst_sed(mpst,mhru))
       allocate (pst_surq(mpst,mhru))
       allocate (zdb(mpst,mhru))
-
-      allocate (pst_lag(mpst,3,mhru))
-
+!S.Lu add for pesticide tiledrain
+ !     allocate (pst_lag(mpst,3,mhru))
+      allocate (pst_lag(mpst,4,mhru))
 
 !!    arrays which contain data related to HRU output 
-      allocate (hrupsta(mpst,4,mhru))
-      allocate (hrupstd(mpst,4,mhru))
-      allocate (hrupstm(mpst,4,mhru))
-      allocate (hrupsty(mpst,4,mhru))
+!      allocate (hrupsta(mpst,4,mhru))
+!      allocate (hrupstd(mpst,4,mhru))
+!      allocate (hrupstm(mpst,4,mhru))
+!      allocate (hrupsty(mpst,4,mhru))
+!S.Lu add for pesticide tiledrain
+      allocate (hrupsta(mpst,6,mhru))
+      allocate (hrupstd(mpst,6,mhru))
+      allocate (hrupstm(mpst,6,mhru))
+      allocate (hrupsty(mpst,6,mhru))
+!S.Lu add for pesticide tiledrain
       allocate (icols(mhruo))
       allocate (ipdvas(mhruo))
-      allocate (hrumono(74,mhru))
-      allocate (hruyro(74,mhru))
-      allocate (hruaao(74,mhru))
+      allocate (hrumono(73,mhru))
+      allocate (hruyro(73,mhru))
+      allocate (hruaao(73,mhru))
       allocate (wtrmon(40,mhru))
       allocate (wtryr(40,mhru))
       allocate (wtraa(40,mhru))
@@ -1881,6 +1887,29 @@
        tillage_factor = 0.
       !! By Zhang for C/N cycling
       !! ============================
+!! S.Lu for macropore flow and sediment routing
+!      allocate (mased(mhru))
+      allocate (msmax(mhru))
+      allocate (ms(mhru))
+      allocate (tilesed(mhru))
+      allocate (tilesedpst(mpst,mhru))
+ !     allocate (tilepstslow(mpst,mhru))
+      allocate (macropst(mpst,mhru))      
+      allocate (macrotilepst(mpst,mhru))
+      allocate (tilepst(mpst,mhru))
+!!  fast flow component, tile flow and P output S.Lu 12/2011
+!      allocate (tileq(mhru))
+!      allocate (tileqfast(mhru))
+!      allocate (tileqslow(mhru)) 
+      allocate (macrotile(mhru))
+      allocate (macroq(mhru))
+      allocate (sol_theta(mlyr,mhru))
+      allocate (tile_fr(mlyr,mhru))
+!!!! 04-02-2012 S.Lu add for tileminP
+   
+      allocate (wet_nly(mhru))
+!! S.Lu for macropore flow and sediment routing
+!!===================================================
       	  
       call zero0
       call zero1

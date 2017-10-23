@@ -966,6 +966,19 @@
       ! tillage_factor: = 1.6 in 30 days after tillage practices occur; otherwise 1.0;
 !! By Zhang for C/N cycling
 
-
-
+!! S.Lu for macropore flow and sediment routing 
+      real, dimension (:), allocatable :: macroq,macrotile
+      real::dep_wet,fr
+      integer :: ifast, ipestd !fastflow simulation flag S.Lu 01-17-12  
+   !  fast flow component, tile flow and P output S.Lu 12/2011
+      real, dimension (:,:), allocatable :: tilepst,macropst
+      real, dimension (:), allocatable :: tileqslow,tilesed
+      real, dimension (:,:), allocatable :: sol_theta
+   !  sediment and adsorped pesticide leached through macropore
+      real, dimension(:), allocatable:: msmax,ms
+      real, dimension(:,:), allocatable:: tile_fr
+      real, dimension(:,:), allocatable:: macrotilepst,tilesedpst
+      real:: kr,filt,GWL, gwseep1, percot
+      integer,dimension(:),allocatable :: wet_nly
+!!S.Lu for macropore flow and sediment routing 
       end module parm
