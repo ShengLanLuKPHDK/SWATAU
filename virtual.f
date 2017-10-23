@@ -353,9 +353,13 @@
 
       !! subbasin averages: pesticides
         if (irtpest > 0) then
-          sub_solpst(sb) = sub_solpst(sb) + hrupstd(irtpest,1,j) +      
-     &                                              hrupstd(irtpest,4,j)
-          sub_sorpst(sb) = sub_sorpst(sb) + hrupstd(irtpest,2,j)
+!          sub_solpst(sb) = sub_solpst(sb) + hrupstd(irtpest,1,j) +      
+!     &                                              hrupstd(irtpest,4,j)
+          sub_solpst(sb) = sub_solpst(sb) + hrupstd(irtpest,1,j) + 
+     &  hrupstd(irtpest,4,j) + hrupstd(irtpest,5,j) 
+!          sub_sorpst(sb) = sub_sorpst(sb) + hrupstd(irtpest,2,j)
+          sub_sorpst(sb) = sub_sorpst(sb) + hrupstd(irtpest,2,j) +
+     &                                              hrupstd(irtpest,6,j)
         end if
 
       !! subbasin averages: bacteria

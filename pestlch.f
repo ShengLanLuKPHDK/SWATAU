@@ -76,12 +76,12 @@
 
       integer :: j, ly, k, kk
       real :: dg, yy, qsurf, vf, zdb1, xx, co, csurf, cocalc
- 
+      real :: pestcon(50,10)
       j = 0
       j = ihru
 
       if (hrupest(j) /= 0) then
-
+ 
         do ly = 1, sol_nly(j)
           if (ly == 1) then
             yy = 0.
@@ -112,7 +112,8 @@
               vf = 0.
               vf = qsurf + sol_prk(ly,j) + flat(ly,j)
 
-              if (sol_pst(k,j,ly) >= 0.0001 .and. vf > 0.) then
+!              if (sol_pst(k,j,ly) >= 0.0001 .and. vf > 0.) then
+              if (sol_pst(k,j,ly) > 0. .and. vf > 0.) then
                 xx = 0.
                 xx = sol_pst(k,j,ly) * (1. - Exp(-vf / (zdb1 + 1.e-6)))
                 cocalc = 0.
@@ -124,7 +125,7 @@
                   cocalc = xx / (sol_prk(ly,j) + flat(ly,j) + 1.e-6)
                 end if
                 co = Min(pst_wsol(kk) / 100., cocalc)
-               
+                
                 !! calculate concentration of pesticide in surface
                 !! runoff and lateral flow
                 csurf = 0.
@@ -133,6 +134,11 @@
                 else
                   csurf = co
                 end if
+!!S.Lu for pesticide concentrations in soils
+                pestcon(k,ly) = percot * co
+
+                if(ly==1 .and. macroq(j)> 0.) call macro_pst(csurf,k) 
+!!S.Lu for pesticide concentrations in soils
 
                 !! calculate pesticide leaching
                 xx = 0.
@@ -162,9 +168,15 @@
                 if (yy > sol_pst(k,j,ly)) yy = sol_pst(k,j,ly)
                 sol_pst(k,j,ly) = sol_pst(k,j,ly) - yy
                 lat_pst(k) = lat_pst(k) + yy 
+!!S.Lu for pesticide in tile drains            
+                if (ipestd==1 .and. ddrain(j) > 0.) then
+                   call  pestdrain(pestcon(k,ly),ly,k)
+                else
+                   tilepst(k,j) = 0.
+                endif
+
 
               end if
-
             end if
           end do
         end do

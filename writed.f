@@ -144,11 +144,16 @@
           if (hrupest(j) == 1) then
           pstsum = 0.
           do k = 1, npmx
-            pstsum = pstsum + hrupstd(k,1,j) + hrupstd(k,2,j)
+!!            pstsum = pstsum + hrupstd(k,1,j) + hrupstd(k,2,j)
+            pstsum = pstsum + hrupstd(k,1,j) + hrupstd(k,2,j) +         
+     & + hrupstd(k,4,j) + hrupstd(k,5,j)
           end do
           if (pstsum > 0. .and. iprp == 1) then
                 write (30,5100) subnum(j), hruno(j), iyr, iida,         
-     &                     (hrupstd(k,1,j), hrupstd(k,2,j), k = 1, npmx)
+     &                     (hrupstd(k,1,j), hrupstd(k,2,j),
+     &                      hrupstd(k,4,j),
+     &                      hrupstd(k,5,j),
+     &                      hrupstd(k,6,j),k = 1, npmx)
           end if
           end if
         end do

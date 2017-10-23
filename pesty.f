@@ -71,7 +71,8 @@
             xx = sub_pst(kk,iwave)
           end if
 
-          if (xx >= .0001) then
+ !         if (xx >= .0001) then
+          if (xx >= 0.) then
             conc = 0.
             er = 0.
             conc = 100. * sol_kp(k,j,1) * xx / (zdb(k,j)+1.e-10)
@@ -80,11 +81,16 @@
             else
               er = enratio
             end if
-
+!            print*,k,j, er
             pst_sed(k,j) = .001 * sedyld(j) * conc * er / hru_ha(j)
             if (pst_sed(k,j) < 0.) pst_sed(k,j) = 0.
             if (pst_sed(k,j) > xx) pst_sed(k,j) = xx
             sol_pst(k,j,1) = xx - pst_sed(k,j)
+
+            if (ifast==1 .and. tilesed(j) > 0.) then
+                call macrosed_pst(k,j,conc,er)
+            endif
+
           end if
         end if
       end do

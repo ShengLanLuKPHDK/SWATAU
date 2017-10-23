@@ -555,7 +555,7 @@
         wshddayo(7) = wshddayo(7) + etday * hru_dafr(j)
         wshddayo(8) = wshddayo(8) + tmx(j) * hru_dafr(j)
         wshddayo(9) = wshddayo(9) + tmn(j) * hru_dafr(j)
-        wshddayo(12) = wshddayo(12) + sedyld(j)
+        wshddayo(12) = wshddayo(12) + sedyld(j) + tilesed(j)
         wshddayo(13) = wshddayo(13) + pndsedin
         wshddayo(14) = wshddayo(14) + pndsedo
         wshddayo(15) = wshddayo(15) + pndsedc
@@ -587,10 +587,17 @@
         wshddayo(46) = wshddayo(46) + percn(j) * hru_dafr(j)
 
         !! wshddayo(47) - wshddayo (103) not used
+!!S.Lu for tile drain pesticide
+        wshddayo(47) = wshddayo(47) + tilepst(1,j)* hru_dafr(j)
+        wshddayo(48) = wshddayo(48) + macrotilepst(1,j)* hru_dafr(j)
+        wshddayo(49) = wshddayo(49) + pst_surq(1,j)* hru_dafr(j)
+        wshddayo(50) = wshddayo(50) + lat_pst(1)* hru_dafr(j)
+!!S.Lu for tile drain pesticide
 
         wshddayo(104) = wshddayo(104) + gw_q(j) * hru_dafr(j)
         wshddayo(105) = wshddayo(105) + revapday * hru_dafr(j)
-        wshddayo(106) = wshddayo(106) + gwseep * hru_dafr(j)
+!        wshddayo(106) = wshddayo(106) + gwseep * hru_dafr(j)
+        wshddayo(106) = wshddayo(106) + gwseep1 * hru_dafr(j)
         wshddayo(107) = wshddayo(107) + rchrg(j) * hru_dafr(j)
         wshddayo(108) = wshddayo(108) + pet_day * hru_dafr(j)
         wshddayo(109) = wshddayo(109) + qtile * hru_dafr(j)
@@ -629,6 +636,8 @@
             hrupstd(k,2,j) = pst_sed(k,j) * 1.e6 * hru_ha(j)
             hrupstd(k,3,j) = (pst_surq(k,j) + pst_sed(k,j)) * 1.e6
             hrupstd(k,4,j) = lat_pst(k) * 1.e6 * hru_ha(j)
+            hrupstd(k,5,j) = tilepst(k,j) * 1.e6 * hru_ha(j)
+            hrupstd(k,6,j) = tilesedpst(k,j) * 1.e6 * hru_ha(j)
             !! watershed summary
             wpstdayo(k,1) = wpstdayo(k,1) + pst_surq(k,j) * hru_dafr(j) 
      &                                                            * 1.e6
@@ -636,6 +645,8 @@
      &                                                              1.e6
             wpstdayo(k,3) = wpstdayo(k,3) + pstsol(k) * hru_dafr(j)
             wpstdayo(k,4) = wpstdayo(k,4) + lat_pst(k) * hru_dafr(j)
+            wpstdayo(k,5) = wpstdayo(k,5) + tilepst(k,j) * hru_dafr(j)
+
           end do
         end if
       end if

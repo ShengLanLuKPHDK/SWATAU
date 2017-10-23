@@ -327,6 +327,16 @@
 	  irmmdt = 0.
         hhsedy = 0.
         ubntss = 0.
+!!s.lu pesticide
+!        tile_fr = 0.
+!        tileqslow = 0.
+!        tilepst = 0.
+!        macroq = 0.
+!        macrotile = 0.
+ !       macrotilepst = 0.
+!        tilesed = 0.
+!        tilesedpst = 0.
+!!s.lu pesticide
 
        return
        end
