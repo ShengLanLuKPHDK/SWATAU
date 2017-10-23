@@ -541,6 +541,27 @@
       wshd_aamon = 0.
 !      wshddayo = 0.
       yr_skip = 0
-
+!Macropore flow sediment and pesticide
+      wet_nly = 0
+      ipest = 0
+      ifast = 0
+      mased = 0.
+      macrotilepst = 0.
+      macroq = 0.
+      macrotile = 0.
+      tilepst = 0.
+  !    tileqslow = 0.
+      macropst = 0.
+  !    tilepstslow = 0.
+      sol_theta = 0.
+      mased = 0.
+      msmax = 0.
+      ms = 0.
+      tilesed = 0.
+      tilesedpst = 0.
+      tile_fr = 0.
+      gwseep1 = 0.
+!Macropore flow sediment and pesticide
+ 
       return
       end
