@@ -129,7 +129,7 @@
  !!calculate macropore flow S.Lu 03-Jun-15
  !!no macropore flow in urban areas
       if(ifast == 1 .and. iurban(j) == 0) then
-        call fastflow2
+        call macroflow
       else
         macroq(j) = 0.
         macrotile(j) = 0.
