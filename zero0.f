@@ -541,6 +541,14 @@
       wshd_aamon = 0.
 !      wshddayo = 0.
       yr_skip = 0
+!!S.Lu for PO4 leaching and transport to tile drains
+      tile_fr = 0.
+      tilep_ly = 0.
+      sol_solpcon = 0.
+      solp_leach = 0.
+      tileminp = 0.
+      sub_tilesolp = 0.
+!!S.Lu for PO4 leaching and transport to tile drains
 
       return
       end
