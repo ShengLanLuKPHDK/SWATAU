@@ -345,6 +345,15 @@
       pdvas(30) = usle
       pdvas(31) = fertn
       pdvas(32) = fertp
+!Soil P budget
+!      pdvas(33) = fertsolp
+!      pdvas(34) = fertorgp
+!      pdvas(35) = plantp(j)
+!      pdvas(36) = yieldp
+      pdvas(33) = auton
+      pdvas(34) = autop
+      pdvas(35) = grazn
+      pdvas(36) = grazp
       pdvas(33) = auton
       pdvas(34) = autop
       pdvas(35) = grazn
@@ -402,9 +411,10 @@
 !    groundwater deep
       pdvas(77) = gw_qdeep(j)
       pdvas(78) = latq(j) - lpndloss - lwetloss
-!!    phos due to crack flow (tvap)
-      pdvas(79) = vap_tile
-
+!! S.Lu for PO4 leaching and transport to tile drains
+      pdvas(79) = tileminp(j) 
+      if(itilep == 1) call soilPout
+!! S.Lu for PO4 leaching and transport to tile drains
       call xmon 
           
       if (ipdvas(1) > 0) then

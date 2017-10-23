@@ -46,7 +46,8 @@
      &         "       LAI","   YLDt/ha","  BACTPct ","  BACTLPct",     
      &         " WTAB CLIm"," WTAB SOLm","     SNOmm"," CMUPkg/ha",     
      &         "CMTOTkg/ha","   QTILEmm"," TNO3kg/ha"," LNO3kg/ha",     
-     &         "  GW_Q_Dmm"," LATQCNTmm"," TVAPkg/ha"/)
+     &         "  GW_Q_Dmm"," LATQCNTmm","TSOLPkg/ha"/)
+!     &         "  GW_Q_Dmm"," LATQCNTmm"/)
 
 
 !!    numbers printed to VB interface HRU output file 
@@ -56,8 +57,8 @@
      &423,433,443,453,463,473,483,493,503,513,523,533,543,              
      &553,563,573,583,593,603,613,623,633,643,653,663,673,              
      &683,693,703,713,723,733,743,753,763,773,783,793,803,              
-     &813,823/)
-
+     &813,823/)  
+!  &813/)
 !!    column headers for subbasin output file
       hedb = (/"  PRECIPmm"," SNOMELTmm","     PETmm","      ETmm",     
      &         "      SWmm","    PERCmm","    SURQmm","    GW_Qmm",     

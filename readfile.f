@@ -763,6 +763,22 @@
 !     & 6x,'nitrok',/,15x,'m3',12x,'kg',12x,'ha',9x,'kg/m3',5x,'kg/m3',
 !     & 9x,'--',9x,'--',12x,'deg c',6x,'--')
       close (101)
+!!S.Lu for soil phosphorus output files
+      open (200, file= "soilP.out")
+      write(200,4444)
+4444  format (t1,"CROP",t8,'HRU',t12,"Year",t17,'MON',t25,'AREA',t39,  
+     &'MINP1',t53,'MINP2',t67,'MINP3',t81,'MINP4',t95,         
+     &'ORGP1',t109,'ORGP2',t123,'ORGP3',t137,'ORGP4')
+
+      open (201, file= "soilPbudge.out")
+      write(201,4445)
+4445  format (t1,"CROP",t8,'HRU',t12,"Year",t17,'MON',t25,'AREA',t39,
+     &'FertP',t53,'FertSolP',t67,'FertOrgP',t81,'Uptake',t95,        
+     &'PlantP',t109,'CropYieldP',t123,'SedOrgP',t137,         
+     &'SedMinP',t151,"GWminP",t165,"TileP",t179,"SurfminP",t193
+     &'SolpLeach',t207,'TMINP',t221,"TORGP")
+ !!S.Lu for soil phosphorus output files
+      
       return
 
  1010 format (32x,'SNOW(mm) at ELEVATION BAND (1-10)',/,                

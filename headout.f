@@ -188,6 +188,8 @@
  1010 format (/(t5,20a4))
  1020 format (//'LULC  HRU       GIS  SUB  MGT  MON','   AREAkm2',      
      & 79(a10))
+!     & 78(a10))
+ !    * 76(a10),"    GISnum")
  1021  format (//'LULC  HRU       GIS  SUB  MGT MO DA   YR',            
      &'   AREAkm2', 79(a10))	   
  1030 format (//6x,' SUB      GIS  MON   AREAkm2',24(a10))
