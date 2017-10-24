@@ -155,6 +155,9 @@
         vel_chan(jrch) = vc
 	  rttime = ch_l2(jrch) * 1000. / (3600. * vc)
 
+      !!for macrophyte growth
+        rh_rch(jrch) = rh
+      !!for macrophyte growth
 
         !! calculate volume of water leaving reach on day
         scoef = 0.

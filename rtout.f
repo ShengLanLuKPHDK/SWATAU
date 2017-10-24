@@ -527,6 +527,7 @@
        rchmono(56,jrch) = rchmono(56,jrch) + rchdy(57,jrch)
        rchmono(57,jrch) = rchmono(57,jrch) + rchdy(58,jrch)
 	   rchmono(58,jrch) = rchmono(58,jrch) + rchdy(59,jrch)
+       rchmono(59,jrch) = rchmono(59,jrch) + rchdy(61,jrch)
       
       return
       end

@@ -341,8 +341,8 @@
       rchdy(58,jrch) = 0.
 !!    Total suspended sediments
 	rchdy(59,jrch) = 0.
-
-
+!! resuspention
+      rchdy(61,jrch) = 0.
 	end if
 
 

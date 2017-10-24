@@ -248,6 +248,12 @@
 	sub_rspc_d =0.
       !!add by zhang
       !!==========================
-	
+!! S.Lu macrophyte growth 
+      grow_biomass = 0.
+      depp = 0.
+      depn = 0.
+      resp = 0.
+      resn = 0.
+!! S.Lu macrophyte growth 
       return
       end

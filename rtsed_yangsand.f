@@ -570,6 +570,9 @@
 !!    Total suspended sediments (only silt and clay)
 	rchdy(59,jrch) = (rch_sil + rch_cla)/rtwtr * 1.e6
 
+!! resuspention
+      rchdy(61,jrch) = deg1
+
 !!    Deposition during the previous time step
       depprch(jrch) = depch(jrch)  !! Channel
 	depprfp(jrch) = depfp(jrch)  !! Flood plain

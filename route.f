@@ -161,6 +161,8 @@
 !!    Total suspended sediments
 	  rchdy(59,jrch) = 0.
 
+!! resuspention
+        rchdy(61,jrch) = 0.
 !! do not perform sediment routing for headwater subbasins
 	    !! when i_subhw = 0
 	  if (i_subhw == 0 .and. inum1 == inum2) then

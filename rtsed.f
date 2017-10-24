@@ -194,7 +194,8 @@
       rchdy(58,jrch) = 0.
 !!    Total suspended sediments
 	rchdy(59,jrch) = sedrch / rtwtr * 1.e6
-
+!! resuspention
+      rchdy(61,jrch) = deg1 + deg2
 !!    Organic nitrogen and Organic Phosphorus contribution from channel erosion
 !!    ch_orgn(jrch) = deg2 * ch_onco(jrch) * 1000.
 !!    ch_orgp(jrch) = deg2 * ch_opco(jrch) * 1000.
@@ -240,6 +241,9 @@
       rchdy(58,jrch) = 0.
 !!    Total suspended sediments
 	rchdy(59,jrch) = 0.
+!!resuspnesion SL 9-12/14
+      rchdy(61,jrch) = 0.
+
 
 	endif !! end of qdin > 0.01 loop
 
