@@ -521,7 +521,10 @@
         hrumono(69,j) = hrumono(69,j) + latno3(j)
         hrumono(70,j) = hrumono(70,j) + gw_qdeep(j)
         hrumono(71,j) = hrumono(71,j) + latq(j) - lpndloss - lwetloss
-        hrumono(72,j) = hrumono(72,j) + vap_tile
+!!S.Lu for PO4 leaching and transpor to tile drains
+        hrumono(72,j) = hrumono(72,j) + tileminp(j)
+ !       soil
+!!S.Lu for PO4 leaching and transpor to tile drains
 
         wtrmon(1,j) = wtrmon(1,j) + pndev / cnv
         wtrmon(2,j) = wtrmon(2,j) + pndsep / cnv
@@ -585,7 +588,10 @@
         wshddayo(44) = wshddayo(44) + nplnt(j) * hru_dafr(j)
         wshddayo(45) = wshddayo(45) + latno3(j) * hru_dafr(j)
         wshddayo(46) = wshddayo(46) + percn(j) * hru_dafr(j)
-
+!S.Lu for tile drain PO4 in KG
+        wshddayo(49) = wshddayo(49) + tileminp(j) * hru_ha(j)
+        wshddayo(50) = wshddayo(50) + minpgw(j) * hru_ha(j)
+        wshddayo(51) = wshddayo(51) + surqsolp(j) * hru_ha(j)
         !! wshddayo(47) - wshddayo (103) not used
 
         wshddayo(104) = wshddayo(104) + gw_q(j) * hru_dafr(j)

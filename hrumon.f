@@ -279,8 +279,10 @@
         pdvas(77) = hrumono(70,j)
 !!    lat q continuous
         pdvas(78) = hrumono(71,j)
-!!      phos due to crack flow (tvap)
+!!S.Lu for PO4 leaching and transpor to tile drains
         pdvas(79) = hrumono(72,j)
+!        if(itilep == 1) call soilPoutm(days)
+!!S.Lu for PO4 leaching and transpor to tile drains
 
       if (itots > 0) then 
 	   ix = itots

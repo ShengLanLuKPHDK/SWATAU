@@ -82,9 +82,11 @@
         pdvab(19) = 0.0
         pdvab(20) = 0.0
         pdvab(21) = 0.0
-        pdvab(23) = submono(18,sb)  !! qtile   jane f.
-        pdvab(22) = submono(19,sb)  !! tile_no3
-        pdvab(24) = submono(20,sb)  !! phos due to crack flow)
+        pdvab(22) = submono(18,sb)  !! tile_no3
+!S.Lu for tile drain PO4 outputs
+        pdvab(23) = submono(19,sb)
+        pdvab(24) = submono(20,sb)
+!S.Lu for tile drain PO4 outputs
 
         if (ipdvab(1) > 0) then
           do ii = 1, itotb
