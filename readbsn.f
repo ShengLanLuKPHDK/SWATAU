@@ -430,7 +430,7 @@
       read (103,*) dep_wet !wgpq
       read (103,*) kr !wdlpq
       read (103,*) filt !wglpq
-      read (103,*) GWL !wdps
+      read (103,*) wdps
       read (103,*) percot !wgps
       read (103,*) wdlps
       read (103,*) wglps
