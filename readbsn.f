@@ -426,8 +426,12 @@
       read (103,1000) titldum
       read (103,*) isubwq
       read (103,1000) titldum
-      read (103,*) wdpq
-      read (103,*) wgpq
+!!S.Lu for PO4 leaching
+!      read (103,*) wdpq
+!      read (103,*) wgpq
+      read (103,*)  k_langmuir
+      read (103,*) Qmax_beta
+!!S.Lu for PO4 leaching
       read (103,*) wdlpq
       read (103,*) wglpq
       read (103,*) wdps
@@ -589,8 +593,13 @@
       read (103,*,iostat=eof) ismax
       if (eof < 0) exit   
       read (103,*,iostat=eof) iroutunit
+!!S.Lu for PO4 leaching and transport in tiledrains
+      if (eof < 0) exit
+      read (103,*,iostat=eof) itilep
+!!S.Lu for PO4 leaching and transport in tiledrains    
       exit
 !!    Drainmod input variables - 01/2006
+
       end do
 
 !!    copy global values to local HRUs
@@ -749,8 +758,13 @@
 !	open (111, file="final_n_balance.txt")
 !	open (112, file="final_yields.txt")
     !! carbon output ends 
-     
-      
+
+!!S.Lu for PO4 leaching and transport to tile drains
+      if (k_langmuir < 0.5) k_langmuir = 0.5
+      if (k_langmuir > 2.4) k_langmuir = 2.4      
+      if (Qmax_beta < 0.06) Qmax_beta  = 0.06  
+      if (Qmax_beta > 0.23) Qmax_beta  = 0.23
+
       return
  1000 format (a)
  1001 format (i4)
