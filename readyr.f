@@ -58,7 +58,7 @@
 
       character (len=80) :: titldum
       integer :: ii, iya, eof, ia1
-
+      integer :: n, startyr
 
 !!    initialize variables
       eof = 0
@@ -90,9 +90,57 @@
      &                       cmtl3yr(i,iya)
             if (ia1 == iyr) exit
 	      if (eof < 0) exit
+!! S.Lu for when the point source starting year is later than simulation year
+            if (ia1 > iyr) then
+              n = ia1 -iyr      !find the starting year
+              startyr = iya + n !find the starting year
+          !!assign value to the starting year
+               floyr(i,startyr) = floyr(i,iya)
+               sedyr(i,startyr) = sedyr(i,iya)
+               orgnyr(i,startyr) = orgnyr(i,iya)                        
+               orgpyr(i,startyr) = orgpyr(i,iya)                        
+               no3yr(i,startyr) = no3yr(i,iya)                          
+               nh3yr(i,startyr) = nh3yr(i,iya)                          
+               no2yr(i,startyr) = no2yr(i,iya)                          
+               minpyr(i,startyr) = minpyr(i,iya)                        
+               cbodyr(i,startyr) = cbodyr(i,iya)                        
+               disoxyr(i,startyr) = disoxyr(i,iya)                      
+               chlayr(i,startyr) = chlayr(i,iya)                       
+               solpstyr(i,startyr) = solpstyr(i,iya)                    
+               srbpstyr(i,startyr) = srbpstyr(i,iya)                   
+               bactpyr(i,startyr) = bactpyr(i,iya)                     
+               bactlpyr(i,startyr) = bactlpyr(i,iya)                    
+               cmtl1yr(i,startyr) = cmtl1yr(i,iya)                     
+               cmtl2yr(i,startyr) = cmtl2yr(i,iya)                      
+               cmtl3yr(i,startyr) = cmtl3yr(i,iya)
+          !!set values before starting year to 0
+               do iya = 1 , n
+                 floyr(i,iya) = 0.
+                 sedyr(i,iya) = 0.
+                 orgnyr(i,iya) = 0.                             
+                 orgpyr(i,iya) = 0.                             
+                 no3yr(i,iya) = 0.                              
+                 nh3yr(i,iya) = 0.                              
+                 no2yr(i,iya) = 0.                              
+                 minpyr(i,iya) = 0.                             
+                 cbodyr(i,iya) = 0.                             
+                 disoxyr(i,iya) = 0.                            
+                 chlayr(i,iya) = 0.                          
+                 solpstyr(i,iya) = 0.                        
+                 srbpstyr(i,iya) = 0.                        
+                 bactpyr(i,iya) = 0.                         
+                 bactlpyr(i,iya) = 0.                       
+                 cmtl1yr(i,iya) = 0.                         
+                 cmtl2yr(i,iya) = 0.                         
+                 cmtl3yr(i,iya) = 0.                
+               enddo
+               exit
+            endif
+!! S.Lu for when the point source starting year is later than simulation year
         end do
 
-      do iya = 2, nbyr+2  !2 extra for forecast scenarios
+!      do iya = 2, nbyr+2  !2 extra for forecast scenarios
+      do iya = startyr+1, nbyr + 2
         read (108,*,iostat=eof) ia1, floyr(i,iya),                      
      &                       sedyr(i,iya),                              
      &                       orgnyr(i,iya),                             
