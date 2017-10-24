@@ -541,6 +541,39 @@
       wshd_aamon = 0.
 !      wshddayo = 0.
       yr_skip = 0
-
+!! S.Lu macrophyte growth 
+      grow_biomass = 0.
+      ma_biomass = 0.
+      imacrophyte = 0
+ !     grma = 0.
+      tppsed = 0
+      detnsed = 0.
+      nh4sed = 0.      
+      no3sed = 0.
+      srpsed = 0.
+      depp = 0.
+      depn = 0.
+      resp = 0.
+      resn = 0.
+      k_n_m = 0.
+      k_p_m = 0.
+      SefSma = 0.
+      death = 0.
+      grmaxm = 0.
+      difpo4 = 0.
+      difno3 = 0.
+      difnh4 = 0.
+      minrate = 0.
+      nitrate = 0.
+      denirate = 0.
+      Kd = 0.
+      pfr = 0.
+      nfr = 0.
+      minDeath = 0.
+      max_biomass = 0.
+      vplant = 0.
+      ch_n_initial = 0.
+      rh_rch = 0.
+!!
       return
       end

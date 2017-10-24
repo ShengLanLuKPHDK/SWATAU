@@ -589,6 +589,11 @@
       read (103,*,iostat=eof) ismax
       if (eof < 0) exit   
       read (103,*,iostat=eof) iroutunit
+!Macrophyte growth switch
+      read (103,*,iostat=eof) imacrophyte
+      if (eof < 0) exit	
+      read (103,*,iostat=eof) radmax
+      if (eof < 0) exit
       exit
 !!    Drainmod input variables - 01/2006
       end do

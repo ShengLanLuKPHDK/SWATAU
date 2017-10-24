@@ -422,7 +422,7 @@
       rchdy(27,jrch) = varoute(11,ihout)                 !!solpst out (mg pst)
       rchdy(28,jrch) = varoute(12,inum2) * (1. - rnum1)  !!srbpst in (mg pst)
       rchdy(29,jrch) = varoute(12,ihout)                 !!srbpst out (mg pst)
-      rchdy(30,jrch) = reactw                            !!reacted pst (mg pst)
+      rchdy(30,jrch) =  ma_biomass(jrch) !reactw              !!reacted pst (mg pst)
       rchdy(31,jrch) = volatpst                          !!volatilized pst (mg)
       rchdy(32,jrch) = setlpst                           !!pst settling (mg pst)
       rchdy(33,jrch) = resuspst                          !!pst resuspension (mg)

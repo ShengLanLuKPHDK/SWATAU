@@ -56,8 +56,8 @@
 !! initialize variables    
       mvaro = 33
       mhruo = 79
-      mrcho = 62
       msubo = 24
+      mrcho = 63 !S.Lu add for macrophyte growth
       mstdo = 113
       motot = 600             !! (50 years limit)
       
@@ -1881,6 +1881,39 @@
        tillage_factor = 0.
       !! By Zhang for C/N cycling
       !! ============================
+!! S.Lu Macrophyte growth 15/Sep/2014
+      allocate (ma_biomass(mch))
+      allocate (grow_biomass(mch))
+      allocate (tppsed(mch))
+      allocate (detnsed(mch))
+!      allocate (grma(mrh))
+      allocate (nh4sed(mch))
+      allocate (no3sed(mch))
+      allocate (srpsed(mch)) 
+      allocate (depp(mch))
+      allocate (depn(mch))
+      allocate (resp(mch))
+      allocate (resn(mch))
+      allocate (k_n_m(mch))
+      allocate (k_p_m(mch))
+      allocate (SefSma(mch))
+      allocate (death(mch))
+      allocate (grmaxm(mch))   
+      allocate (difpo4(mch))   
+      allocate (difno3(mch))  
+      allocate (difnh4(mch))
+      allocate (minrate(mch))
+      allocate (nitrate(mch))
+      allocate (vplant(mch))
+      allocate (denirate(mch))
+      allocate (Kd(mch))
+      allocate (pfr(mch))
+      allocate (nfr(mch))
+      allocate (minDeath(mch))
+      allocate (max_biomass(mch))
+      allocate (ch_n_initial(mch))
+      allocate (rh_rch(mch))
+!!end macrophyte growth
       	  
       call zero0
       call zero1

@@ -231,47 +231,47 @@
       if (eof < 0) exit
       read (104,*,iostat=eof) spndfr
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndpsa
+      read (104,*,iostat=eof) k_n_m(i)    !spndpsa
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndpv
+      read (104,*,iostat=eof) k_p_m(i)    !spndpv
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndesa
+      read (104,*,iostat=eof) SefSma(i)   !spndesa
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndev
+      read (104,*,iostat=eof) death(i)    !spndev
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndv
+      read (104,*,iostat=eof) grmaxm(i)   !spndv
       if (eof < 0) exit
-      read (104,*,iostat=eof) spnds
+      read (104,*,iostat=eof) difpo4(i)   !spnds
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndns
+      read (104,*,iostat=eof) difno3(i)   !spndns
       if (eof < 0) exit
-      read (104,*,iostat=eof) spndk
+      read (104,*,iostat=eof) difnh4(i)   !spndk
       if (eof < 0) exit
-      read (104,*,iostat=eof) sifld1
+      read (104,*,iostat=eof) minrate(i)  !sifld1
       if (eof < 0) exit
-      read (104,*,iostat=eof) sifld2
+      read (104,*,iostat=eof) nitrate(i)  !sifld2
       if (eof < 0) exit
       read (104,*,iostat=eof) sndt
       if (eof < 0) exit
-      read (104,*,iostat=eof) sp1
+      read (104,*,iostat=eof) pfr(i)      !sp1
       if (eof < 0) exit
-      read (104,*,iostat=eof) sp2
+      read (104,*,iostat=eof) nfr(i)      !sp2
       if (eof < 0) exit
-      read (104,*,iostat=eof) sn1
+      read (104,*,iostat=eof) nh4sed(i)   !sn1
       if (eof < 0) exit
-      read (104,*,iostat=eof) sn2
+      read (104,*,iostat=eof) no3sed(i)   !sn2
       if (eof < 0) exit
-      read (104,*,iostat=eof) schla
+      read (104,*,iostat=eof) srpsed(i)   !schla
       if (eof < 0) exit
-      read (104,*,iostat=eof) sseci
+      read (104,*,iostat=eof)  Kd(i) !sseci
       if (eof < 0) exit
-      read (104,*,iostat=eof) spno3
+      read (104,*,iostat=eof) ma_biomass(i) !spno3
       if (eof < 0) exit
-      read (104,*,iostat=eof) spsolp
+      read (104,*,iostat=eof) denirate(i) !spsolp
       if (eof < 0) exit
-      read (104,*,iostat=eof) sporgn
+      read (104,*,iostat=eof) minDeath(i) !sporgn
       if (eof < 0) exit
-      read (104,*,iostat=eof) sporgp
+      read (104,*,iostat=eof) max_biomass(i) !sporgp
       if (eof < 0) exit
       read (104,5100,iostat=eof) titldum
       if (eof < 0) exit
@@ -279,7 +279,7 @@
         vselsetlpnd = 10.0
       else
         backspace 104
-        read (104,*,iostat=eof) pnd_d50
+        read (104,*,iostat=eof) vplant(i) !pnd_d50
         pnd_d50mm = pnd_d50 / 1000.        !! micrometers to millimeters
         velsetlpnd = 24. * 411. * pnd_d50mm ** 2.
       endif    

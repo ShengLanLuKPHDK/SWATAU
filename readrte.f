@@ -309,6 +309,22 @@
       if (ch_opco(irch) <= 0.) ch_opco(irch) = ch_opco_bsn
 !!    set default values for mike van liew
 
+!!   initialize sediment P and N values S.Lu 15/Sep/2014
+      if (ch_onco(irch) > 0.) then
+         detnsed(irch) = ch_onco(irch)
+      else 
+         detnsed(irch) =  300   !mg/kg
+      endif
+
+      if (ch_opco(irch) > 0.) then
+         tppsed(irch) = ch_opco(irch)
+      else
+         tppsed(irch) = 400    !mg/kg
+      endif
+!!   initialize soluble nutrient numbers kg/m2
+!       nh4sed(irch) = 
+!       no3sed(irch) = 
+!       srpsed(irch) = tppsedpor(jrch)*ch_bed_bd(jrch)^2
 
 !!    initialize variables for channel degradation
       ch_di(irch) = ch_d(irch)
@@ -316,6 +332,9 @@
       ch_si(irch) = ch_s(2,irch)
       ch_wi(irch) = ch_w(2,irch)
 
+!! for macrophyte growth
+       ch_n_initial(irch) = ch_n(2,irch)
+!! for macrophyte growth
       close (103)
       return
 5000  format (a)

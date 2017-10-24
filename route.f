@@ -217,6 +217,11 @@
         if (iwq == 0) call hhnoqual
       end if
 
+!! instream macrophyte growth calculations S.Lu 15/Sep/2014
+      if(ievent < 3 .and. imacrophyte == 1) then
+         call macrophyte
+         call bedsediment
+      endif
 !! perform in-stream pesticide calculations
 !!      call biofilm
       
