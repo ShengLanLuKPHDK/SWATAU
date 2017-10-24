@@ -94,9 +94,6 @@
             end if
           end if
         end do
-!s.lu add for macrophyte growth
-!      if (hru_ra(k) > radmax)  radmax = hru_ra(k) 
-!      if (hru_ra(k) < radmin ) radmin = hru_ra(k)
        
       return
 ! 5200 format (7x,300f8.3)
