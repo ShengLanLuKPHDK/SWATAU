@@ -589,7 +589,6 @@
       read (103,*,iostat=eof) ismax
       if (eof < 0) exit   
       read (103,*,iostat=eof) iroutunit
-      exit
 !! macropore flag
       read (103,*,iostat=eof) ifast
       if (eof < 0) exit
