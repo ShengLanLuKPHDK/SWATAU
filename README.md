@@ -49,8 +49,10 @@
 | kr | wdlpq in basin.bsn | macropore sediment replenishment rate coefficient (not calibrated, last value 4) |
 | filt | wglpq in basin.bsn | macropore sediment filtering when reaching tile drains (ranging 0-1) |
 | percot | wgps in basin.bsn | soluble pesticide concentration in macropore flow (similar concept with percop for surface runoff) (ranging from 0-1) |
+| ifast | new line at the end of bansin.bsn | switch for macropore module, 0 off 1 on |
+| ipest | new line at the end of bansin.bsn | switch for soluble pesticide leaching module, 0 off 1 on |
 
-\*for the purpose of SWATCUP calibration
+\*for the purpose of SWATCUP calibration 
 
 ## Soluble reactive phosphorus (SRP) transport from tile drains
 **New module** : Soluble phosphorus transport from tile drains
@@ -67,7 +69,7 @@
 | Filename(s) | Key content/functionality of subroutine(s) | comments |
 |:--- |:--- | --- |
 | soilPout.f90 | sum soil P for whole soil profile and print soil P budget |   |
-| soilplch.f90 | compute soluble P leaching, transport in surface runoff, tile drains and lost from soil profile |   |
+| soilplch.f90 | compute soluble P leaching, transport in surface runoff, tile drains and lost from soil profile | use soil salinity input (sol_ec in .chm) for the phosphorus bounding material (Alox + Feox) |
 | tilqsplit.f90 | computes fraction of the tile drain flow from each soil layer |   |
 
 ### Changes to existing source files
@@ -97,6 +99,7 @@
 |:--- |:--- | --- |
 | k_langmuir | wdpq in basin.bsn | Langmuir adsorption constant (l mg-1) (range 0.5-2.4) |
 | Qmax_beta | wgpq in basin.bsn | Maximum adsorption fraction (range 0.06-0.23) |
+| itilep | new line at the end of the basin.bsn file | switch for drainP module, 0 off 1 on |
 
 \*for the purpose of SWATCUP calibration
 
@@ -163,5 +166,7 @@
 | srpsed | CHLAP in .pnd file | Never calibrated or initialized. Initial amount of solute reactive phosphuros in bed sediment porus water |
 | kd | SECCIP in .pnd file | Never calibrated or initialized. Ability of sediment absorbing phosphorus from surrounding substance |
 | ma_biomass | PND_NO3 in .pnd file | Never calibrated or initialized. Initial macrophyte biomass |
+| imacrophyte | new line at the end of basin.bsn | switch for macrophyte module, 0 off 1 on |
+| radmax | new line at the end of basin.bsn | maximum solar radiation, input parameter. Difficult to determine during SWAT simulation, because swat does not read all weather input data before simulation. |
 
 \*for the purpose of SWATCUP calibration
