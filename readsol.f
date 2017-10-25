@@ -262,6 +262,17 @@
         if (sol_ph(j,ihru)<= 1.e-6) sol_ph(j,ihru) = 6.5
       end do
 
+      !!creat a boundary layer at the end of wet depth S.Lu 6-11-12
+      if(ifast == 1 .and. iurban(ihru)==0)   then
+        if(dep_wet > sol_z(nly,ihru)) dep_wet = sol_z(nly,ihru)
+        if (dep_wet <= 10. ) then 
+          wet_nly(ihru) = 1
+        else
+          call layersplit(dep_wet) !new change S.Lu 6-08-1
+        endif
+      endif
+!!creat a boundary layer at the end of wet depth S.Lu 6-11-12
+
 
       close (107)
       return
