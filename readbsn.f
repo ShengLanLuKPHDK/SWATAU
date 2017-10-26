@@ -430,7 +430,7 @@
       read (103,*) dep_wet !wgpq
       read (103,*) kr !wdlpq
       read (103,*) filt !wglpq
-      read (103,*) wdps
+      read (103,*) k_theta !wdps
       read (103,*) percot !wgps
       read (103,*) wdlps
       read (103,*) wglps
@@ -715,6 +715,10 @@
 !!    at some future time)
       nactfr = 0.02
       abstinit = iabstr
+
+!!Check macropore parameters
+      if (k_theta == 0.) k_theta = 0.5
+      if (k_theta > 1) k_theta = 1
 
       
       close (103)

@@ -92,7 +92,8 @@
         sol_theta(ly,j) = theta
 !!calculate alfa from relative soil moisture
  !       alfa1(ly) = exp(sol_theta(ly,j)) -1 !alfa calculated from soil moisture
-        alfa1(ly) = sqrt(sol_theta(ly,j)) 
+ !       alfa1(ly) = sqrt(sol_theta(ly,j)) 
+        alfa1(ly) = sol_theta(ly,j)/(sol_theta(ly,j) + k_theta)
         alfa1(ly) = min(alfa1(ly),1.)
      ! alfa1(ly) = (theta) !**2
 !!find the minimum alfa through out layers where macropore exist
