@@ -20,7 +20,7 @@
 | macrosed.f90 | computes sediment transport to the tile drains via macropore |   |
 | macrosed_pst.f90 | computes sediment bound pesticide that leach to the tile drains via macropore |   |
 | pestdrain.f90 | computes soluble pesticide lost from tile drain |   |
-| tilesplit.f90 | computes fraction of the tile drain flow from each soil layer |   |
+| tilesplit.f90 | computes fraction of the tile drain flow from each soil layer |  |
 
 ### Changes to existing source files
 | Filename(s) | Key content/functionality added to existing subroutine(s) | comments |
@@ -44,11 +44,12 @@
 
 | Parameter name(s) | Replacing which existing parameter in which file\* incl. on/off switches | comments |
 |:--- |:--- | --- |
-| macro_fr | wdpq in basin.bsn | fraction of saturated soil water content, condisiton for macropre onset (ranging from 0-1) |
-| dep_wet | wgpq in basin.bsn | depth of wet layers (range depend on input soil depth) |
-| kr | wdlpq in basin.bsn | macropore sediment replenishment rate coefficient (not calibrated, last value 4) |
-| filt | wglpq in basin.bsn | macropore sediment filtering when reaching tile drains (ranging 0-1) |
-| percot | wgps in basin.bsn | soluble pesticide concentration in macropore flow (similar concept with percop for surface runoff) (ranging from 0-1) |
+| macro_fr | WDPQ  in basin.bsn | fraction of saturated soil water content, condisiton for macropre onset (ranging from 0-1) |
+| dep_wet | WGPQ  in basin.bsn | depth of wet layers (range depend on input soil depth) |
+| kr | WDLPQ  in basin.bsn | macropore sediment replenishment rate coefficient (not calibrated, last value 4) |
+| filt | WGLPQ  in basin.bsn | macropore sediment filtering when reaching tile drains (ranging 0-1) |
+| k_theta | WDPS in basin.bsn | Michaelis-Menton half-saturation constant for the macropore flow fraction (default value 0.5, ranging 0-1) |
+| percot | wgps in basin.bsn | soluble pesticide concentration in macropore and tile drain flow (similar concept with percop for surface runoff) (ranging from 0-1)  |
 | ifast | new line at the end of bansin.bsn | switch for macropore module, 0 off 1 on |
 | ipest | new line at the end of bansin.bsn | switch for soluble pesticide leaching module, 0 off 1 on |
 
@@ -97,8 +98,8 @@
 ### New model parameters
 | Parameter name(s) | Replacing which existing parameter in which file\* incl. on/off switches | comments |
 |:--- |:--- | --- |
-| k_langmuir | wdpq in basin.bsn | Langmuir adsorption constant (l mg-1) (range 0.5-2.4) |
-| Qmax_beta | wgpq in basin.bsn | Maximum adsorption fraction (range 0.06-0.23) |
+| k_langmuir | WDPQ in basin.bsn | Langmuir adsorption constant (l mg-1) (range 0.5-2.4) |
+| Qmax_beta | WGPQ in basin.bsn | Maximum adsorption fraction (range 0.06-0.23) |
 | itilep | new line at the end of the basin.bsn file | switch for drainP module, 0 off 1 on |
 
 \*for the purpose of SWATCUP calibration
