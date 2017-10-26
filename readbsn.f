@@ -717,7 +717,7 @@
       abstinit = iabstr
 
 !!Check macropore parameters
-      if (k_theta == 0.) k_theta = 0.5
+      if (k_theta <= 0.) k_theta = 0.5
       if (k_theta > 1) k_theta = 1
 
       

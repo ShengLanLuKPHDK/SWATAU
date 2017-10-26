@@ -968,7 +968,7 @@
 
 !! S.Lu for macropore flow and sediment routing 
       real, dimension (:), allocatable :: macroq,macrotile
-      real::dep_wet, macro_fr
+      real::dep_wet, macro_fr, k_theta
       integer :: ifast, ipestd !fastflow simulation flag S.Lu 01-17-12  
    !  fast flow component, tile flow and P output S.Lu 12/2011
       real, dimension (:,:), allocatable :: tilepst,macropst
